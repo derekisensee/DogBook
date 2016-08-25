@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-sm- text-center">
                     <button class="btn btn-primary">BROWSE</button>
-                    <button class="btn btn-primary">POST</button>
+                    <a href="upload/upload.php"><button class="btn btn-primary">POST</button></a>
                 </div>
             </div>
         </div>
