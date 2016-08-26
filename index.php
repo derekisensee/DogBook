@@ -14,7 +14,7 @@
         <div class="container">
             <div class="row">
                 <div class="text-center">
-                    <a href="upload/form.php"><button class="btn btn-link">POST</button></a>
+                    <a href="upload/form.php"><button class="btn btn-link btn-lg">POST</button></a>
                 </div>
             </div>
         </div>
