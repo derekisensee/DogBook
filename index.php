@@ -14,7 +14,7 @@
         <div class="container">
             <div class="row">
                 <div class="text-center">
-                    <a href="upload/form.php"><button class="btn btn-link btn-lg">POST</button></a>
+                    <a href="upload/form.php"><button class="btn btn-secondary btn-lg">POST AN IMAGE</button></a>
                 </div>
             </div>
         </div>
@@ -24,8 +24,7 @@
     
     <body>
         <div class="frontPage">
-            <h2>Posts</h2>
-            <div class="container">
+            <div class="container-fluid"> <!--Maybe make a regular 'container'? -->
                 <?php
                     $dirname = "upload/images/";
                     $images = glob($dirname."*.{jpg,png,jpeg,JPEG,JPG,PNG}", GLOB_BRACE); 

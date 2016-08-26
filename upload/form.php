@@ -14,7 +14,7 @@
     <body>
         <div class="container">
             <form enctype="multipart/form-data" action="upload.php" method="post">
-                <input type="hidden" name="MAX_FILE_SIZE" value="10000000">
+                <!-- <input type="hidden" name="MAX_FILE_SIZE" value="100000000">  -->
                 <input id="userFile" name="userFile" type="file">
                 <input type="submit" value="Click to Upload Image">
             </form>
