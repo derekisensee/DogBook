@@ -13,9 +13,9 @@
         
         <div class="container">
             <div class="row">
-                <div class="col-sm- text-center">
+                <div class="text-center">
                     <button class="btn btn-primary">BROWSE</button>
-                    <a href="upload/upload.php"><button class="btn btn-primary">POST</button></a>
+                    <a href="upload/form.php"><button class="btn btn-primary">POST</button></a>
                 </div>
             </div>
         </div>
@@ -25,7 +25,16 @@
     
     <body>
         <div class="frontPage">
-            <h2>Featured Posts</h2>
+            <h2>Posts</h2>
+            <div class="container">
+                <?php
+                    $dirname = "upload/images/";
+                $images = glob($dirname."*.jpg");
+                foreach($images as $image) {
+                    echo '<img src="' . $image . '" /<br />';
+                }
+                ?>
+            </div>
         </div>
         <!--The jquery/javascript stuff-->
         <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>

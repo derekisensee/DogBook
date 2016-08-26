@@ -1,28 +1,52 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
-        <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
-        <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css'>
-        <link rel="stylesheet" href="css/upload.css">
-        <div class="container">
-            <h1>DogBook Upload</h1>
-        </div>
-        <hr>
-    </head>
-    
-    <body>
-        <div class="row">
-            <div class="col-sm-5">
-                <div class="input-group">
-                    <form enctype="multipart/form-data" action="*.php" method="post">
-                        <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-                        <input name="userfile" type="file" />
-                        <input type="submit" value="Upload Image" />
-                    </form>
-                </div>
-            </div>
-        </div>
-        <button class="btn-primary"></button>
-    </body>
-</html>
+<?php
+    /*$target_dir = "images/";
+    $target_file = $target_dir . basename($_FILES["userFile"]["name"]);
+    $uploadOk = 1; 
+    $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
+    //check if file is an image or fake
+    if(isset($_POST["submit"])) {
+        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+        if($check !== false) {
+            echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        }
+        else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+    }
+    //allow certain file types
+    if($imageFileType != "jpg" && $imageFileType != "jpeg" && $imageFileType != "png") {
+        echo "Sorry, only .jpg, .jpeg, or .png type files are allowed.";
+        $uploadOk = 0;
+    }
+
+    //checks if $uploadOk is good
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+    }
+    else {
+        if (move_uploaded_file($_FILES["userFile"]["name"], $target_file)) {
+            echo "The file " . basename($FILES["fileToUpload"]["name"]) . " has been uploaded.";
+        }
+        else {
+            echo "Error uploading file.";
+        }
+    }*/
+
+    //WORKS with image in image/ directory, didn't work with different image.
+    $uploaddir = 'images/';
+    $uploadfile = $uploaddir . basename($_FILES['userFile']['name']);
+
+    echo '<pre>';
+    if (move_uploaded_file($_FILES['userFile']['tmp_name'], $uploadfile)) {
+        echo "File is valid, and was successfully uploaded.\n";
+    } else {
+        echo "Possible file upload attack!\n";
+    }
+
+    echo 'Here is some more debugging info:';
+    print_r($_FILES);
+
+    print "</pre>";
+?>
