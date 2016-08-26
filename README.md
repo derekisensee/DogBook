@@ -1,2 +1,2 @@
-# socialSite
-a goofy thing i'm putting together
+# DogBook
+like FaceBook, but for dogs
