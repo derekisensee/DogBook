@@ -14,7 +14,6 @@
         <div class="container">
             <div class="row">
                 <div class="text-center">
-                    <button class="btn btn-primary">BROWSE</button>
                     <a href="upload/form.php"><button class="btn btn-primary">POST</button></a>
                 </div>
             </div>
@@ -29,10 +28,10 @@
             <div class="container">
                 <?php
                     $dirname = "upload/images/";
-                $images = glob($dirname."*.jpg");
-                foreach($images as $image) {
-                    echo '<img src="' . $image . '" /<br />';
-                }
+                    $images = glob($dirname."*.{jpg,png,jpeg,JPEG,JPG,PNG}", GLOB_BRACE); 
+                    foreach($images as $image) {
+                        echo '<img src="' . $image . '" /<br />'; //resize images to fit screen better
+                    }
                 ?>
             </div>
         </div>
