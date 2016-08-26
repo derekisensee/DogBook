@@ -5,3 +5,8 @@ body {
 .frontPage {
     text-align: center;
 }
+
+img {
+    width: 320px;
+    height: auto;
+}
